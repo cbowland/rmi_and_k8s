@@ -1,0 +1,5 @@
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.16-1
+
+COPY ./target/rmi-lib.jar /rmi-lib.jar
+
+CMD CLASSPATH=/rmi-lib.jar /usr/bin/rmiregistry

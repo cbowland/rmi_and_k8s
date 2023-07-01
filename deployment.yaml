@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rmi-client
+  labels:
+    app: rmi-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rmi-client
+  template:
+    metadata:
+      labels:
+        app: rmi-client
+    spec:
+      containers:
+        - name: rmi-client
+          image: quay.io/cbowland/rmi_client
+          env:
+            - name: SERVER_HOST
+              value: rmi-server

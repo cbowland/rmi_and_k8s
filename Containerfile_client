@@ -1,0 +1,12 @@
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.16-1
+
+
+ENV SERVER_HOST=localhost
+ENV NAME=steve
+
+COPY target/rmi-client.jar /rmi-client.jar
+COPY /target/rmi-lib.jar /rmi-lib.jar
+
+CMD /usr/bin/java -cp /rmi-client.jar:/rmi-lib.jar client.Client $SERVER_HOST 1099 $NAME
+
+
