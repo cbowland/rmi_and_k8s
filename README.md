@@ -18,10 +18,16 @@ Investigate rmi clients in k8s using rmi services running remotely
 ## Run the Code
 * run rmi registry
   * CLASSPATH=target/rmi-lib.jar $JAVA_HOME/bin/rmiregistry
+![Screenshot 2023-07-01 at 2 58 29 PM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/8a959e23-f5e4-400f-9a47-e44d5553c4ce)
+
 * run server
   * java -cp target/rmi-server.jar server.Server 1099
+![Screenshot 2023-07-01 at 2 59 53 PM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/02c10372-20f2-47e9-8dbd-09ba65823e12)
+
 * execute client
   * java -cp target/rmi-client.jar:target/rmi-lib.jar client.Client localhost 1099 steve
+![Screenshot 2023-07-01 at 3 00 55 PM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/afa25c5d-b087-482a-8dd2-4256c85f3760)
+
 
 ## Container Stuff
 
