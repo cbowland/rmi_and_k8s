@@ -45,12 +45,13 @@ Investigate rmi clients in k8s using rmi services running remotely
 * run client passing in NAME environment variable
   * podman run --rm --network=host --name rmi_client -e NAME=bob rmi_client:latest
 
-## OpenShift stuff
+## OpenShift Stuff
 
-```be sure the registry and the server are running locally
-does not matter if they are running directly or in containers
-or even one in each, but they do need to be running
-```
+Be sure the registry and the server are running locally.
+It does not matter if they are running directly or in containers
+or even one in each, but they do need to be running so that the client running
+in Openshift has something to connect to (once we have Skupper set up).
+
 * oc login -u -p --you know the drill
 
 * install the skupper operator
@@ -70,14 +71,16 @@ or even one in each, but they do need to be running
 * deploy client code to openshift
   * oc apply -f deployment.yaml
     
-```
-you might want to edit the deployment.yaml and use a
-different image if you have built one. this would require
-pushing your image to your own image repo
-```
+
+You might want to edit the deployment.yaml and use a
+different image if you have built one. This would require
+pushing your image to your own image repo and then updating the
+deploymet.yaml to use that image.
+
 * check the logs for the client container
   
-```see the connection to the registry work
+They should look the same as when run locally.
+See screenshot above for an example.
+You will see the connection to the registry work
 but the remote object method call times out
-as i can't figure out how to get the ports right
-```
+as i can't figure out how to get the ports right.
