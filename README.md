@@ -64,7 +64,7 @@ in Openshift has something to connect to (once we have Skupper set up).
   * skupper init --enable-console --enable-flow-collector
 
 * set up skupper locally
-  * skupper gateway init
+  * skupper gateway init --type=podman
   * skupper service create rmi-server 1099
   * skupper gateway bind rmi-server localhost 1099
 
