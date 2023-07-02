@@ -52,6 +52,10 @@ It does not matter if they are running directly or in containers
 or even one in each, but they do need to be running so that the client running
 in Openshift has something to connect to (once we have Skupper set up).
 
+* Install Skupper locally
+  * Follow the instructions here: https://skupper.io/install/index.html
+  * You will also need Podman or Docker as well
+
 * oc login -u -p --you know the drill
 
 * install the skupper operator
