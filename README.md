@@ -89,6 +89,7 @@ You will see the connection to the registry work
 
 but the remote object method call times out and i'm not sure why
 
-![Screen Shot 2023-07-01 at 16 32 41 PM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/875a2386-5a63-4979-8c5a-44d2f67a2ec8)
+![Screenshot 2023-07-02 at 10 19 08 AM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/3f32a9fe-ae9a-449d-a6e0-af72dec6019c)
+
 
  
