@@ -84,7 +84,11 @@ They should look the same as when run locally.
 See screenshot above for an example.
 
 You will see the connection to the registry work
+
 ![Screenshot 2023-07-02 at 10 01 13 AM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/37c58bec-a572-4563-a981-7b1acebe2814)
 
 but the remote object method call times out and i'm not sure why
 
+![Screen Shot 2023-07-01 at 16 32 41 PM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/875a2386-5a63-4979-8c5a-44d2f67a2ec8)
+
+ 
