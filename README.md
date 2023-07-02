@@ -77,10 +77,14 @@ different image if you have built one. This would require
 pushing your image to your own image repo and then updating the
 deploymet.yaml to use that image.
 
+
 * check the logs for the client container
   
 They should look the same as when run locally.
 See screenshot above for an example.
+
 You will see the connection to the registry work
-but the remote object method call times out
-as i can't figure out how to get the ports right.
+![Screenshot 2023-07-02 at 10 01 13 AM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/37c58bec-a572-4563-a981-7b1acebe2814)
+
+but the remote object method call times out and i'm not sure why
+
