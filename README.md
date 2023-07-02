@@ -79,7 +79,7 @@ in Openshift has something to connect to (once we have Skupper set up).
 You might want to edit the deployment.yaml and use a
 different image if you have built one. This would require
 pushing your image to your own image repo and then updating the
-deploymet.yaml to use that image.
+deployment.yaml to use that image.
 
 
 * check the logs for the client container
