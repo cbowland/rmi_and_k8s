@@ -69,8 +69,8 @@ in Openshift has something to connect to (once we have Skupper set up).
 
 * set up skupper locally
   * skupper gateway init --type=podman
-  * skupper service create rmi-server 1099
-  * skupper gateway bind rmi-server localhost 1099
+  * skupper service create rmi-server 1099 5000
+  * skupper gateway bind rmi-server localhost 1099 5000
 
 * deploy client code to openshift
   * oc apply -f deployment.yaml
