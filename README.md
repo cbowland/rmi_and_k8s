@@ -52,6 +52,17 @@ It does not matter if they are running directly or in containers
 or even one in each, but they do need to be running so that the client running
 in Openshift has something to connect to (once we have Skupper set up).
 
+When running the client in OpenShift and the server locally, you will need to set
+the hostname to be the same as the skupper service that you create below. If you
+follow those instructions, here is how run the server
+
+* java -Djava.rmi.server.hostname=rmi-server -cp target/rmi-server.jar server.Server 1099
+
+It's exactly the same as the version at the top, but with the addition of
+"-Djava.rmi.server.hostname=rmi-server" to match skupper service. See
+https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/javarmiproperties.html
+for additional details.
+
 * Install Skupper locally
   * Follow the instructions here: https://skupper.io/install/index.html
   * You will also need Podman or Docker as well

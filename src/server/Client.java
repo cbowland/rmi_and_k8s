@@ -18,10 +18,13 @@ public class Client
     int port = Integer.parseInt(args[index++]);
     String myName = args[index++];
     String name = "Greeting";
-    Registry registry = LocateRegistry.getRegistry(host, port);
-    System.out.println("Registry list: " + registry.list()[0]);
-    Greeting greeting = (Greeting) registry.lookup(name);
-    System.out.println(name + " reported: " + greeting.greet(myName));
-    System.out.println("All done with greeting.");
+    while (true) {
+      Registry registry = LocateRegistry.getRegistry(host, port);
+      System.out.println("Registry list: " + registry.list()[0]);
+      Greeting greeting = (Greeting) registry.lookup(name);
+      System.out.println(name + " reported: " + greeting.greet(myName));
+      System.out.println("All done with greeting.");
+      Thread.sleep(4000);
+    }
   }
 }
