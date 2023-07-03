@@ -96,15 +96,9 @@ deployment.yaml to use that image.
 * check the logs for the client container
   
 They should look the same as when run locally.
-See screenshot above for an example.
 
-You will see the connection to the registry work
+![Screenshot 2023-07-03 at 10 38 12 AM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/683863c8-de6f-446c-adad-db06b317a5bf)
 
-![Screenshot 2023-07-02 at 10 01 13 AM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/37c58bec-a572-4563-a981-7b1acebe2814)
-
-but the remote object method call times out and i'm not sure why
-
-![Screenshot 2023-07-02 at 10 19 08 AM](https://github.com/cbowland/rmi_and_k8s/assets/1307303/3f32a9fe-ae9a-449d-a6e0-af72dec6019c)
 
 
  
