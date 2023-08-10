@@ -1,0 +1,29 @@
+Be sure that the Interconnect Operator is installed
+
+show the application running locally
+    start the rmi registry
+        CLASSPATH=target/rmi-lib.jar $JAVA_HOME/bin/rmiregistry
+    start the rmi server
+        for localhost use
+            java -cp target/rmi-server.jar server.Server 1099
+        or for hostname of rmi-server use
+            java -Djava.rmi.server.hostname=rmi-server -cp target/rmi-server.jar server.Server 1099 
+    run the client application
+        for localhost use
+            java -cp target/rmi-client.jar:target/rmi-lib.jar client.QotdClient localhost 1099
+        or for hostname of rmi-server use
+            java -cp target/rmi-client.jar:target/rmi-lib.jar client.QotdClient rmi-server 1099
+    stop the client application
+
+build the client container
+run client container
+
+push client image to quay
+deploy client image to OpenShift
+    need to change deployment to use new image
+    watch it fail because no skupper
+    scale deployment to zero
+
+do the skupper stuff
+start the app in OpenShift again
+watch it succeed

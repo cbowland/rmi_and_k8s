@@ -4,14 +4,19 @@
 rm -rf target
 mkdir target
 
-# compile
+#compile the rmi server components
 javac -d target src/server/*.java
 
 #create server jar
 jar cvf target/rmi-server.jar -C target server
 
-#create rmi jar
-jar cvf target/rmi-lib.jar -C target server/Greeting.class
+#compile the rmi clients
+#this needs the rmi-server.jar from the step above
+javac -cp target/rmi-server.jar -d target src/client/*.java
+
+#create rmi jar with both clients
+#jar cvf target/rmi-lib.jar -C target server/Greeting.class
+jar cvf target/rmi-lib.jar -C target server/Greeting.class -C target server/Qotd.class
 
 #create client jar
 jar cvf target/rmi-client.jar -C target client
@@ -22,8 +27,11 @@ CLASSPATH=target/rmi-lib.jar $JAVA_HOME/bin/rmiregistry
 #run server
 java -cp target/rmi-server.jar server.Server 1099
 
-#execute client
+#execute greeting client
 java -cp target/rmi-client.jar:target/rmi-lib.jar client.Client localhost 1099 steve
+
+#execute quote of the day client
+java -cp target/rmi-client.jar:target/rmi-lib.jar client.QotdClient localhost 1099
 
 # container stuff
 # build the 3 images
@@ -58,8 +66,8 @@ skupper init --enable-console --enable-flow-collector
 
 # set up skupper locally
 skupper gateway init
-skupper service create rmi-server 1099
-skupper gateway bind rmi-server localhost 1099
+skupper service create rmi-server 1099 5000
+skupper gateway bind rmi-server localhost 1099 5000
 
 oc apply -f deployment.yaml
 
