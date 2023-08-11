@@ -178,3 +178,10 @@ _Run Demo Magic Script_
 ~~~ shell
 bash demo.sh
 ~~~
+
+_Demo Magic Sample Output_
+
+
+
+https://github.com/cbowland/rmi_and_k8s/assets/1307303/8906d94b-b7e4-4559-bf47-daa520a811e2
+
